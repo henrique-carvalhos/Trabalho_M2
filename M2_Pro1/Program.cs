@@ -22,6 +22,12 @@ namespace M2_Pro1
 
             Console.Write("Largura (m): ");
             float largura = float.Parse(Console.ReadLine());
+            
+            Console.Write("Tolerância da gramatura (%): ");
+            float toleranciaGrm = float.Parse(Console.ReadLine());
+
+            Console.Write("Tolerância da largura (%): ");
+            float toleranciaLarg = float.Parse(Console.ReadLine());
 
 
             for (int i = 1; i <= 5; i++)
