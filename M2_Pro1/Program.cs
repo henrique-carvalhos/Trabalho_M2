@@ -11,6 +11,7 @@ namespace M2_Pro1
         static void Main(string[] args)
         {
             double maxLarg, minLarg, maxGrm, minGrm;
+            double somaGrm = 0, mediaGrm = 0, somaLarg = 0, mediaLarg = 0;
 
             Console.WriteLine(" *** SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL *** ");
             Console.WriteLine("-------------------------------------------------\n");
@@ -39,18 +40,26 @@ namespace M2_Pro1
             {
                 Console.Write(i + ") g/m²: ");
                 float leituraGrm = float.Parse(Console.ReadLine());
+
+                somaGrm = somaGrm + leituraGrm;
+                mediaGrm = somaGrm / 5;
             }
 
             for (int i = 1; i <= 3; i++)
             {
                 Console.Write(i + ") largura: ");
                 float leituraLarg = float.Parse(Console.ReadLine());
+                somaLarg = somaLarg + leituraLarg;
+                mediaLarg = somaLarg / 3;
             }
 
-            Console.Write("RESULTADO FINAL");
+            Console.WriteLine("\tRESULTADO FINAL");
             Console.WriteLine("Artigo: "+artigo);
-            Console.WriteLine("Gramatura: "+minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
-            Console.WriteLine("Largura: "+minLarg.ToString("f2") + " ~ " + largura + " ~ " + maxLarg.ToString("f2"));
+            Console.WriteLine("Média da gramatura\tTolerância permitida");
+            Console.WriteLine(mediaGrm+"\t\t\t"+minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
+
+            Console.WriteLine("Média da largura\tTolerância permitida");
+            Console.WriteLine(mediaLarg.ToString("f2")+"\t\t\t"+minLarg.ToString("f2") + " ~ " + largura + " ~ " + maxLarg.ToString("f2"));
             Console.ReadKey();
         }
     }
