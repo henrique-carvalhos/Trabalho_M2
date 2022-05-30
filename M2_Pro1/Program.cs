@@ -10,6 +10,8 @@ namespace M2_Pro1
     {
         static void Main(string[] args)
         {
+            double maxLarg, minLarg, maxGrm, minGrm;
+
             Console.WriteLine(" *** SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL *** ");
             Console.WriteLine("-------------------------------------------------\n");
             Console.WriteLine("Digite os padrões de acordo com o tecido");
@@ -23,8 +25,11 @@ namespace M2_Pro1
             Console.Write("Largura (m): ");
             float largura = float.Parse(Console.ReadLine());
             
-            Console.Write("Tolerância da gramatura (%): ");
+            Console.Write("\nTolerância da gramatura (%): ");
             float toleranciaGrm = float.Parse(Console.ReadLine());
+            maxGrm = gramatura * (toleranciaGrm / 100 + 1 );
+            minGrm = gramatura * (toleranciaGrm / 100 - 1 );
+
 
             Console.Write("Tolerância da largura (%): ");
             float toleranciaLarg = float.Parse(Console.ReadLine());
