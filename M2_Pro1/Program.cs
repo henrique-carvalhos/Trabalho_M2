@@ -12,6 +12,8 @@ namespace M2_Pro1
         {
             double maxLarg, minLarg, maxGrm, minGrm;
             double somaGrm = 0, mediaGrm = 0, somaLarg = 0, mediaLarg = 0;
+            string resulTestGrm = " ";
+            string resulTestLarg = " ";
 
             Console.WriteLine(" *** SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL *** ");
             Console.WriteLine("-------------------------------------------------\n");
@@ -34,7 +36,7 @@ namespace M2_Pro1
             Console.Write("Tolerância da largura (%): ");
             float toleranciaLarg = float.Parse(Console.ReadLine());
             maxLarg = largura * (toleranciaLarg / 100 + 1);
-            minLarg = largura - (largura * toleranciaLarg / 100);   
+            minLarg = largura - (largura * toleranciaLarg / 100);
 
             for (int i = 1; i <= 5; i++)
             {
@@ -45,6 +47,22 @@ namespace M2_Pro1
                 mediaGrm = somaGrm / 5;
             }
 
+            if ((mediaGrm >= minGrm && mediaGrm <= maxGrm))
+            {
+                resulTestGrm = "APROVADO";
+            }
+            else
+            {
+                if (mediaGrm < minGrm)
+                {
+                    resulTestGrm = "REPROVADO";
+                }
+                else
+                {
+                    resulTestGrm = "REPROCESSAR";
+                }
+            }
+
             for (int i = 1; i <= 3; i++)
             {
                 Console.Write(i + ") largura: ");
@@ -53,13 +71,29 @@ namespace M2_Pro1
                 mediaLarg = somaLarg / 3;
             }
 
+            if ((mediaLarg >= minLarg && mediaLarg <= maxLarg))
+            {
+                resulTestLarg = "APROVADO";
+            }
+            else
+            {
+                if (mediaLarg > minLarg)
+                {
+                    resulTestLarg = "REPROVADO";
+                }
+                else
+                {
+                    resulTestLarg = "REPROCESSAR";
+                }
+            }
+
             Console.WriteLine("\tRESULTADO FINAL");
             Console.WriteLine("Artigo: "+artigo);
             Console.WriteLine("Média da gramatura\tTolerância permitida");
-            Console.WriteLine(mediaGrm+"\t\t\t"+minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
+            Console.WriteLine(mediaGrm+" "+resulTestGrm+"\t\t"+minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
 
             Console.WriteLine("Média da largura\tTolerância permitida");
-            Console.WriteLine(mediaLarg.ToString("f2")+"\t\t\t"+minLarg.ToString("f2") + " ~ " + largura + " ~ " + maxLarg.ToString("f2"));
+            Console.WriteLine(mediaLarg.ToString("f2")+ " " + resulTestLarg + "\t\t"+minLarg.ToString("f2") + " ~ " + largura + " ~ " + maxLarg.ToString("f2"));
             Console.ReadKey();
         }
     }
