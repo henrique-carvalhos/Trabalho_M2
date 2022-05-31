@@ -87,8 +87,9 @@ namespace M2_Pro1
                 }
             }
 
-            Console.WriteLine("\tRESULTADO FINAL");
+            Console.WriteLine("\n\tRESULTADO FINAL\n");
             Console.WriteLine("Artigo: "+artigo);
+
             Console.WriteLine("Média da gramatura\tTolerância permitida");
             Console.WriteLine(mediaGrm+" "+resulTestGrm+"\t\t"+minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
 
