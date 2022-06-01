@@ -15,84 +15,92 @@ namespace M2_Pro1
             string resulTestGrm = " ";
             string resulTestLarg = " ";
 
+            Console.WriteLine("---------------------------------------------------------------------------------\n");
             Console.WriteLine(" ***                 SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL                 *** ");
             Console.WriteLine("---------------------------------------------------------------------------------\n");
             Console.WriteLine("Olá! Seja bem vindo ao SGQ, sistema que gerencia a qualidade de tecidos têxteis.");
             Console.WriteLine("Software será capaz de fazer a validação dos testes de largura e gramatura (g/m²)");
+            Console.WriteLine("Seram utilizados como base as normas: \n");
+            Console.WriteLine("NBR 10591 - Materiais têxteis - Determinação da gramatura de superfícies têxteis");
+            Console.WriteLine("NBR 10589 - Materiais têxteis -Determinação da largura de não-tecidos e tecidos planos");
 
 
 
-
-
-            Console.WriteLine("Digite os padrões de acordo com o tecido");
-
-            Console.Write("Artigo: ");
-            string artigo = Console.ReadLine();
-
-            Console.Write("Gramatura (g/m²): ");
-            float gramatura = float.Parse(Console.ReadLine());
-
-            Console.Write("Largura (m): ");
-            float largura = float.Parse(Console.ReadLine());
-            
-            Console.Write("\nTolerância da gramatura (%): ");
-            float toleranciaGrm = float.Parse(Console.ReadLine());
-            maxGrm = gramatura * (toleranciaGrm / 100 + 1 );
-            minGrm = gramatura - (gramatura * toleranciaGrm / 100);
-
-            Console.Write("Tolerância da largura (%): ");
-            float toleranciaLarg = float.Parse(Console.ReadLine());
-            maxLarg = largura * (toleranciaLarg / 100 + 1);
-            minLarg = largura - (largura * toleranciaLarg / 100);
-
-            for (int i = 1; i <= 5; i++)
+            while ()
             {
-                Console.Write(i + ") g/m²: ");
-                float leituraGrm = float.Parse(Console.ReadLine());
+                Console.WriteLine("Deseja iniciar os testes? S/N");
 
-                somaGrm = somaGrm + leituraGrm;
-                mediaGrm = somaGrm / 5;
-            }
+                Console.WriteLine("Digite os padrões de acordo com o tecido");
 
-            if ((mediaGrm >= minGrm && mediaGrm <= maxGrm))
-            {
-                resulTestGrm = "APROVADO";
-            }
-            else
-            {
-                if (mediaGrm < minGrm)
+                Console.Write("Artigo: ");
+                string artigo = Console.ReadLine();
+
+                Console.Write("Gramatura (g/m²): ");
+                float gramatura = float.Parse(Console.ReadLine());
+
+                Console.Write("Largura (m): ");
+                float largura = float.Parse(Console.ReadLine());
+
+                Console.Write("\nTolerância da gramatura (%): ");
+                float toleranciaGrm = float.Parse(Console.ReadLine());
+                maxGrm = gramatura * (toleranciaGrm / 100 + 1);
+                minGrm = gramatura - (gramatura * toleranciaGrm / 100);
+
+                Console.Write("Tolerância da largura (%): ");
+                float toleranciaLarg = float.Parse(Console.ReadLine());
+                maxLarg = largura * (toleranciaLarg / 100 + 1);
+                minLarg = largura - (largura * toleranciaLarg / 100);
+
+                for (int i = 1; i <= 5; i++)
                 {
-                    resulTestGrm = "REPROVADO";
+                    Console.Write(i + ") g/m²: ");
+                    float leituraGrm = float.Parse(Console.ReadLine());
+
+                    somaGrm = somaGrm + leituraGrm;
+                    mediaGrm = somaGrm / 5;
+                }
+
+                if ((mediaGrm >= minGrm && mediaGrm <= maxGrm))
+                {
+                    resulTestGrm = "APROVADO";
                 }
                 else
                 {
-                    resulTestGrm = "REPROCESSAR";
+                    if (mediaGrm < minGrm)
+                    {
+                        resulTestGrm = "REPROVADO";
+                    }
+                    else
+                    {
+                        resulTestGrm = "REPROCESSAR";
+                    }
                 }
-            }
 
-            for (int i = 1; i <= 3; i++)
-            {
-                Console.Write(i + ") largura: ");
-                float leituraLarg = float.Parse(Console.ReadLine());
-                somaLarg = somaLarg + leituraLarg;
-                mediaLarg = somaLarg / 3;
-            }
-
-            if ((mediaLarg >= minLarg && mediaLarg <= maxLarg))
-            {
-                resulTestLarg = "APROVADO";
-            }
-            else
-            {
-                if (mediaLarg > minLarg)
+                for (int i = 1; i <= 3; i++)
                 {
-                    resulTestLarg = "REPROVADO";
+                    Console.Write(i + ") largura: ");
+                    float leituraLarg = float.Parse(Console.ReadLine());
+                    somaLarg = somaLarg + leituraLarg;
+                    mediaLarg = somaLarg / 3;
+                }
+
+                if ((mediaLarg >= minLarg && mediaLarg <= maxLarg))
+                {
+                    resulTestLarg = "APROVADO";
                 }
                 else
                 {
-                    resulTestLarg = "REPROCESSAR";
+                    if (mediaLarg > minLarg)
+                    {
+                        resulTestLarg = "REPROVADO";
+                    }
+                    else
+                    {
+                        resulTestLarg = "REPROCESSAR";
+                    }
                 }
             }
+
 
             Console.WriteLine("\n\tRESULTADO FINAL\n");
             Console.WriteLine("Artigo: "+artigo);
