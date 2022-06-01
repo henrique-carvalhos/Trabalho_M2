@@ -15,14 +15,21 @@ namespace M2_Pro1
             string resulTestGrm = " ";
             string resulTestLarg = " ";
 
-            Console.WriteLine(" *** SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL *** ");
-            Console.WriteLine("-------------------------------------------------\n");
+            Console.WriteLine(" ***                 SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL                 *** ");
+            Console.WriteLine("---------------------------------------------------------------------------------\n");
+            Console.WriteLine("Olá! Seja bem vindo ao SGQ, sistema que gerencia a qualidade de tecidos têxteis.");
+            Console.WriteLine("Software será capaz de fazer a validação dos testes de largura e gramatura (g/m²)");
+
+
+
+
+
             Console.WriteLine("Digite os padrões de acordo com o tecido");
 
             Console.Write("Artigo: ");
             string artigo = Console.ReadLine();
 
-            Console.Write("Gramatura (g/m³): ");
+            Console.Write("Gramatura (g/m²): ");
             float gramatura = float.Parse(Console.ReadLine());
 
             Console.Write("Largura (m): ");
