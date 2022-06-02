@@ -27,7 +27,7 @@ namespace M2_Pro1
             Console.WriteLine("Seram utilizados como base as normas: \n");
             Console.WriteLine("NBR 10591 - Materiais têxteis - Determinação da gramatura de superfícies têxteis");
             Console.WriteLine("NBR 10589 - Materiais têxteis -Determinação da largura de não-tecidos e tecidos planos\n");
-            Console.Write("Tecle enter para continuar");
+            Console.Write("Tecle enter para continuar.");
             Console.ReadKey();
             Console.Clear();
 
@@ -80,13 +80,13 @@ namespace M2_Pro1
 
             if ((mediaGrm >= minGrm && mediaGrm <= maxGrm))
             {
-                resulTestGrm = "APROVADO";
+                resulTestGrm = "APROVADO   ";
             }
             else
             {
                 if (mediaGrm < minGrm)
                 {
-                    resulTestGrm = "REPROVADO";
+                    resulTestGrm = "REPROVADO  ";
                 }
                 else
                 {
@@ -106,13 +106,13 @@ namespace M2_Pro1
 
             if ((mediaLarg >= minLarg && mediaLarg <= maxLarg))
             {
-                resulTestLarg = "APROVADO";
+                resulTestLarg = "APROVADO   ";
             }
             else
             {
                 if (mediaLarg > minLarg)
                 {
-                    resulTestLarg = "REPROVADO";
+                    resulTestLarg = "REPROVADO  ";
                 }
                 else
                 {
@@ -130,10 +130,10 @@ namespace M2_Pro1
             Console.WriteLine("\n\t\tRESULTADO FINAL\n");
             Console.WriteLine("Artigo: " + artigo);
 
-            Console.WriteLine("\nMédia da gramatura\tTolerância permitida");
-            Console.WriteLine(mediaGrm + " " + resulTestGrm + "\t\t" + minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
+            Console.WriteLine("\nMédia da gramatura\t\tTolerância permitida");
+            Console.Write(mediaGrm.ToString("f2") + " " + resulTestGrm+ "\t\t" + minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
 
-            Console.WriteLine("\nMédia da largura\tTolerância permitida");
+            Console.WriteLine("\nMédia da largura\t\tTolerância permitida");
             Console.WriteLine(mediaLarg.ToString("f2") + " " + resulTestLarg + "\t\t" + minLarg.ToString("f2") + " ~ " + largura + " ~ " + maxLarg.ToString("f2"));
 
             Console.ReadKey();
