@@ -31,8 +31,12 @@ namespace M2_Pro1
             Console.ReadKey();
             Console.Clear();
 
-            Console.WriteLine("Iniciando o teste . . .");
-            Thread.Sleep (2000);
+            Console.Write("Iniciando o teste");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write(" .");
+                Thread.Sleep(1000);
+            }
             Console.Clear();
 
             Console.WriteLine("Digite os padrões de acordo com o tecido");
@@ -56,11 +60,15 @@ namespace M2_Pro1
             maxLarg = largura * (toleranciaLarg / 100 + 1);
             minLarg = largura - (largura * toleranciaLarg / 100);
 
-            Console.WriteLine("Salvando as informações digitadas . . .");
-            Thread.Sleep(2000);
+            Console.Write("\nSalvando as informações digitadas");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write(" .");
+                Thread.Sleep(1000);
+            }
             Console.Clear();
 
-            Console.WriteLine("Digite os dados coletado\n");
+            Console.WriteLine("Digite os dados coletados\n");
             for (int i = 1; i <= 5; i++)
             {
                 Console.Write(i + ") g/m²: ");
@@ -111,11 +119,14 @@ namespace M2_Pro1
                     resulTestLarg = "REPROCESSAR";
                 }
             }
-
-            Console.WriteLine("Calculando o resultado . . .");
-            Thread.Sleep(2000);
+            Console.Write("\nCalculando os resultados");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write(" .");
+                Thread.Sleep(1500);
+            }
             Console.Clear();
-
+            
             Console.WriteLine("\n\t\tRESULTADO FINAL\n");
             Console.WriteLine("Artigo: " + artigo);
 
