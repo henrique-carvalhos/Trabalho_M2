@@ -11,20 +11,25 @@ namespace M2_Pro1
     {
         static void Main(string[] args)
         {
-            string artigo = " ";
-            float gramatura = 0, largura = 0;
-            float toleranciaGrm, toleranciaLarg, leituraGrm, leituraLarg;
-            double maxLarg = 0, minLarg = 0, maxGrm = 0, minGrm = 0;
-            double somaGrm = 0, mediaGrm = 0, somaLarg = 0, mediaLarg = 0;
-            string resulTestGrm = " ";
-            string resulTestLarg = " ";
-            string respReiniaProgram = "S";
+            /* Programa.:
+             * Problema.:
+             * Data.....:
+             * Autor(es):Abner, Derick, Henrique.
+             */
 
+            //Declaração de variáveis
+            string artigo;
+            float gramatura, largura, toleranciaGrm, toleranciaLarg, leituraGrm, leituraLarg;
+            double maxLarg, minLarg, maxGrm, minGrm, somaGrm = 0, mediaGrm = 0, somaLarg = 0, mediaLarg = 0;
+            string resulTestGrm = " ", resulTestLarg = " ", respReiniaProgram = "S";
+
+            //Estrutura de repetição - reinicia o programa todo
             while (respReiniaProgram == "S") 
             {
-                Console.WriteLine("---------------------------------------------------------------------------------");
-                Console.WriteLine(" ***                 SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL                 *** ");
-                Console.WriteLine("---------------------------------------------------------------------------------\n");
+                //Títito e interface de apresentação do programa
+                Console.WriteLine("-------------------------------------------------------------------------------------");
+                Console.WriteLine(" ***                   SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL                   *** ");
+                Console.WriteLine("-------------------------------------------------------------------------------------\n");
                 Console.WriteLine("Olá! Seja bem vindo ao SGQ, sistema que gerencia a qualidade de tecidos têxteis.");
                 Console.WriteLine("Software capaz de fazer a validação dos testes de largura e gramatura (g/m²)");
                 Console.WriteLine("Seram utilizados como base as normas: \n");
@@ -34,6 +39,7 @@ namespace M2_Pro1
                 Console.ReadKey();
                 Console.Clear();
 
+                //Estrutura de repetição - Animação de troca de tela
                 Console.Write("Iniciando o teste");
                 for (int i = 0; i < 3; i++)
                 {
@@ -42,27 +48,30 @@ namespace M2_Pro1
                 }
                 Console.Clear();
 
-                Console.WriteLine("Digite os padrões de acordo com o tecido");
+                //Entrada dos dados a serem cadastrados 
+                Console.WriteLine("Digite os padrões de acordo com o tecido a ser cadastrado");
 
                 Console.Write("Artigo: ");
                 artigo = Console.ReadLine();
 
                 Console.Write("Gramatura (g/m²): ");
-                gramatura = float.Parse(Console.ReadLine());
+                gramatura = float.Parse(Console.ReadLine());//deve conter números 
 
                 Console.Write("Largura (m): ");
-                largura = float.Parse(Console.ReadLine());
+                largura = float.Parse(Console.ReadLine());//digitar números até 2,0 metros
 
-                Console.Write("\nTolerância da gramatura (%): ");
-                toleranciaGrm = float.Parse(Console.ReadLine());
-                maxGrm = gramatura * (toleranciaGrm / 100 + 1);
-                minGrm = gramatura - (gramatura * toleranciaGrm / 100);
+                //Processamento das tolerâncias de gramatura e largura
+                Console.Write("\nTolerância da gramatura (%): ±");
+                toleranciaGrm = float.Parse(Console.ReadLine());//tolerância deve ser de ± 5%
+                maxGrm = gramatura * (toleranciaGrm / 100 + 1);//processamento do máximo de gramatura
+                minGrm = gramatura - (gramatura * toleranciaGrm / 100);//processamento do minímo de gramatura
 
-                Console.Write("Tolerância da largura (%): ");
-                toleranciaLarg = float.Parse(Console.ReadLine());
-                maxLarg = largura * (toleranciaLarg / 100 + 1);
-                minLarg = largura - (largura * toleranciaLarg / 100);
+                Console.Write("Tolerância da largura (%): ±");
+                toleranciaLarg = float.Parse(Console.ReadLine());//tolerância deve ser de ± 2%
+                maxLarg = largura * (toleranciaLarg / 100 + 1);//processamento do máximo de largura
+                minLarg = largura - (largura * toleranciaLarg / 100);//processamento do minímo de largura
 
+                //Estrutura de repetição - Animação de troca de tela
                 Console.Write("\nSalvando as informações digitadas");
                 for (int i = 0; i < 3; i++)
                 {
@@ -71,14 +80,15 @@ namespace M2_Pro1
                 }
                 Console.Clear();
 
+                //Estrutura de repetição - Entrada dos dados coletados da gramatura
                 Console.WriteLine("Digite os dados coletados\n");
                 for (int i = 1; i <= 5; i++)
                 {
                     Console.Write(i + ") g/m²: ");
                     leituraGrm = float.Parse(Console.ReadLine());
 
-                    somaGrm = somaGrm + leituraGrm;
-                    mediaGrm = somaGrm / 5;
+                    somaGrm = somaGrm + leituraGrm;//processamento de soma das gramaturas digitadas
+                    mediaGrm = somaGrm / 5;//processamento da média da soma das gramaturas
                 }
 
                 if ((mediaGrm >= minGrm && mediaGrm <= maxGrm))
@@ -99,12 +109,14 @@ namespace M2_Pro1
 
                 Console.WriteLine();
 
+                //Estrutura de repetição - Entrada dos dados coletados da largura
                 for (int i = 1; i <= 3; i++)
                 {
                     Console.Write(i + ") largura: ");
-                    leituraLarg = float.Parse(Console.ReadLine());
-                    somaLarg = somaLarg + leituraLarg;
-                    mediaLarg = somaLarg / 3;
+                    leituraLarg = float.Parse(Console.ReadLine());//digitar números até 2,0 metros
+
+                    somaLarg = somaLarg + leituraLarg;//processamento de soma das larguras digitadas
+                    mediaLarg = somaLarg / 3;//processamento da média da soma das larguras
                 }
 
                 if ((mediaLarg >= minLarg && mediaLarg <= maxLarg))
@@ -122,6 +134,8 @@ namespace M2_Pro1
                         resulTestLarg = "REPROCESSAR";
                     }
                 }
+
+                //Estrutura de repetição - Animação de troca de tela
                 Console.Write("\nCalculando os resultados");
                 for (int i = 0; i < 3; i++)
                 {
@@ -130,18 +144,18 @@ namespace M2_Pro1
                 }
                 Console.Clear();
 
+                //Saída dos dados - Apresentação do resultado dos testes
                 Console.WriteLine("\n\t\tRESULTADO FINAL\n");
                 Console.WriteLine("Artigo: " + artigo);
-
                 Console.WriteLine("\nMédia da gramatura\t\tTolerância permitida");
                 Console.Write(mediaGrm.ToString("f2") + " " + resulTestGrm + "\t\t" + minGrm.ToString("f2") + " ~ " + gramatura + " ~ " + maxGrm.ToString("f2"));
-
                 Console.WriteLine("\nMédia da largura\t\tTolerância permitida");
                 Console.WriteLine(mediaLarg.ToString("f2") + " " + resulTestLarg + "\t\t" + minLarg.ToString("f2") + " ~ " + largura + " ~ " + maxLarg.ToString("f2"));
                 Console.Write("\n\nTecle enter para continuar.");
                 Console.ReadKey();
                 Console.Clear();
 
+                //Estrada da resposta para reiniciar o programa
                 Console.Write("Deseja realizar um novo teste? S/N - ");
                 respReiniaProgram = Console.ReadLine();
                 Console.Clear();
