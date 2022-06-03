@@ -18,7 +18,7 @@ namespace M2_Pro1
             double somaGrm = 0, mediaGrm = 0, somaLarg = 0, mediaLarg = 0;
             string resulTestGrm = " ";
             string resulTestLarg = " ";
-            string respReiniaProgram = " ";
+            string respReiniaProgram = "S";
 
             while (respReiniaProgram == "S") 
             {
@@ -138,14 +138,15 @@ namespace M2_Pro1
 
                 Console.WriteLine("\nMédia da largura\t\tTolerância permitida");
                 Console.WriteLine(mediaLarg.ToString("f2") + " " + resulTestLarg + "\t\t" + minLarg.ToString("f2") + " ~ " + largura + " ~ " + maxLarg.ToString("f2"));
-                Console.Write("Tecle enter para continuar.");
+                Console.Write("\n\nTecle enter para continuar.");
                 Console.ReadKey();
                 Console.Clear();
 
-                Console.Write("Deseja realizar um novo teste? ");
+                Console.Write("Deseja realizar um novo teste? S/N - ");
                 respReiniaProgram = Console.ReadLine();
-            
+                Console.Clear();
             }
+            Console.WriteLine("Obrigado por utilizar o SGQ!\nAté mais :)");
             Console.ReadKey();
         }
     }
