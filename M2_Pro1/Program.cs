@@ -21,10 +21,10 @@ namespace M2_Pro1
             string artigo;
             float gramatura, largura, toleranciaGrm, toleranciaLarg, leituraGrm, leituraLarg;
             double maxLarg, minLarg, maxGrm, minGrm, somaGrm = 0, mediaGrm = 0, somaLarg = 0, mediaLarg = 0;
-            string resulTestGrm = " ", resulTestLarg = " ", respReiniaProgram = "S";
+            string resulTestGrm = " ", resulTestLarg = " ", respReiniciaProgram = "S";
 
             //Estrutura de repetição - reinicia o programa todo
-            while (respReiniaProgram == "S") 
+            while (respReiniciaProgram == "S")
             {
                 //Títito e interface de apresentação do programa
                 Console.WriteLine("-------------------------------------------------------------------------------------");
@@ -55,7 +55,7 @@ namespace M2_Pro1
                 artigo = Console.ReadLine();
 
                 Console.Write("Gramatura (g/m²): ");
-                gramatura = float.Parse(Console.ReadLine());//deve conter números 
+                gramatura = float.Parse(Console.ReadLine());//deve conter números até 900
 
                 Console.Write("Largura (m): ");
                 largura = float.Parse(Console.ReadLine());//digitar números até 2,0 metros
@@ -81,7 +81,9 @@ namespace M2_Pro1
                 Console.Clear();
 
                 //Estrutura de repetição - Entrada dos dados coletados da gramatura
-                Console.WriteLine("Digite os dados coletados\n");
+                Console.WriteLine("Digite os dados coletados dos corpos de prova\n");
+                Console.WriteLine("Valores dos corpos de prova da gramatura");
+
                 for (int i = 1; i <= 5; i++)
                 {
                     Console.Write(i + ") g/m²: ");
@@ -91,6 +93,7 @@ namespace M2_Pro1
                     mediaGrm = somaGrm / 5;//processamento da média da soma das gramaturas
                 }
 
+                //Estrutura condicional composta encadeada - Verificação da média da gramatura
                 if ((mediaGrm >= minGrm && mediaGrm <= maxGrm))
                 {
                     resulTestGrm = "APROVADO   ";
@@ -107,7 +110,7 @@ namespace M2_Pro1
                     }
                 }
 
-                Console.WriteLine();
+                Console.WriteLine("\nValores dos corpos de prova da largura"); ;
 
                 //Estrutura de repetição - Entrada dos dados coletados da largura
                 for (int i = 1; i <= 3; i++)
@@ -119,6 +122,7 @@ namespace M2_Pro1
                     mediaLarg = somaLarg / 3;//processamento da média da soma das larguras
                 }
 
+                //Estrutura condicional composta encadeada - Verificação da média da largura
                 if ((mediaLarg >= minLarg && mediaLarg <= maxLarg))
                 {
                     resulTestLarg = "APROVADO   ";
@@ -157,7 +161,7 @@ namespace M2_Pro1
 
                 //Estrada da resposta para reiniciar o programa
                 Console.Write("Deseja realizar um novo teste? S/N - ");
-                respReiniaProgram = Console.ReadLine();
+                respReiniciaProgram = Console.ReadLine();
                 Console.Clear();
             }
             Console.WriteLine("Obrigado por utilizar o SGQ!\nAté mais :)");
