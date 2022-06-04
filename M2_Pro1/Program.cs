@@ -19,12 +19,12 @@ namespace M2_Pro1
 
             //Declaração de variáveis
             string artigo;
-            float gramatura, largura, toleranciaGrm, toleranciaLarg, leituraGrm, leituraLarg;
+            float gramatura, largura, toleranciaGrm, novaToleranciaGrm, toleranciaLarg, novaToleranciaLarg, leituraGrm, novaLeituraGrm, leituraLarg, novaLeituraLarg;
             double maxLarg, minLarg, maxGrm, minGrm, somaGrm = 0, mediaGrm = 0, somaLarg = 0, mediaLarg = 0;
             string resulTestGrm = " ", resulTestLarg = " ", respReiniciaProgram = "S";
 
             //Estrutura de repetição - reinicia o programa todo
-            while (respReiniciaProgram == "S")
+            while ((respReiniciaProgram == "S" || respReiniciaProgram == "s" || respReiniciaProgram == "Sim" || respReiniciaProgram == "sim" || respReiniciaProgram "SIM"))
             {
                 //Títito e interface de apresentação do programa
                 Console.WriteLine("-------------------------------------------------------------------------------------");
@@ -60,14 +60,29 @@ namespace M2_Pro1
                 Console.Write("Largura (m): ");
                 largura = float.Parse(Console.ReadLine());//digitar números até 2,0 metros
 
-                //Processamento das tolerâncias de gramatura e largura
+                //Processamento das tolerâncias de gramatura
                 Console.Write("\nTolerância da gramatura (%): ±");
                 toleranciaGrm = float.Parse(Console.ReadLine());//tolerância deve ser de ± 5%
+                //Estrutura de repetição - Verificar se a tolerância digitada está correta
+                while (toleranciaGrm > 5)
+                {
+                    Console.Write("Valor incorreto! \nDigite uma tolerância de no máximo 5%: ");
+                    novaToleranciaGrm = float.Parse((Console.ReadLine()));
+                    toleranciaGrm = novaToleranciaGrm;//processamento/atribuição da nova tolerância
+                }
                 maxGrm = gramatura * (toleranciaGrm / 100 + 1);//processamento do máximo de gramatura
                 minGrm = gramatura - (gramatura * toleranciaGrm / 100);//processamento do minímo de gramatura
 
                 Console.Write("Tolerância da largura (%): ±");
                 toleranciaLarg = float.Parse(Console.ReadLine());//tolerância deve ser de ± 2%
+                //Estrutura de repetição - Verificar se a tolerância digitada está correta
+                while (toleranciaLarg > 2)
+                {
+                    Console.Write("Valor incorreto! \nDigite uma tolerância de no máximo 2%: ");
+                    novaToleranciaLarg = float.Parse((Console.ReadLine()));
+                    toleranciaLarg = novaToleranciaLarg;//processamento/atribuição da nova tolerância
+                }
+
                 maxLarg = largura * (toleranciaLarg / 100 + 1);//processamento do máximo de largura
                 minLarg = largura - (largura * toleranciaLarg / 100);//processamento do minímo de largura
 
@@ -86,8 +101,17 @@ namespace M2_Pro1
 
                 for (int i = 1; i <= 5; i++)
                 {
-                    Console.Write(i + ") g/m²: ");
-                    leituraGrm = float.Parse(Console.ReadLine());
+                    //Console.Write(i + ") g/m²: ");
+                    //leituraGrm = float.Parse(Console.ReadLine());
+                    //Estrutura de repetição - Verificar se o valor da gramatura digitada está correta
+                    while (leituraGrm > 900)
+                    {
+                        Console.Write(i + ") g/m²: ");
+                        leituraGrm = float.Parse(Console.ReadLine());
+                        Console.Write("Valor incorreto! \nDigite um valor até 900 g/m²: ");
+                        novaLeituraGrm = float.Parse((Console.ReadLine()));
+                        leituraGrm = novaLeituraGrm;//processamento/atribuição da nova gramatura
+                    }
 
                     somaGrm = somaGrm + leituraGrm;//processamento de soma das gramaturas digitadas
                     mediaGrm = somaGrm / 5;//processamento da média da soma das gramaturas
@@ -117,6 +141,13 @@ namespace M2_Pro1
                 {
                     Console.Write(i + ") largura: ");
                     leituraLarg = float.Parse(Console.ReadLine());//digitar números até 2,0 metros
+                    //Estrutura de repetição - Verificar se o valor da largura digitada está correta
+                    while (leituraLarg > 2)
+                    {
+                        Console.Write("Valor incorreto! \nDigite um valor até 2 metros: ");
+                        novaLeituraLarg = float.Parse((Console.ReadLine()));
+                        leituraLarg = novaLeituraLarg;//processamento/atribuição da nova largura
+                    }
 
                     somaLarg = somaLarg + leituraLarg;//processamento de soma das larguras digitadas
                     mediaLarg = somaLarg / 3;//processamento da média da soma das larguras
