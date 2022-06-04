@@ -66,6 +66,7 @@ namespace M2_Pro1
 
                 Console.Write("Largura (m): ");
                 largura = float.Parse(Console.ReadLine());//digitar números até 2,0 metros
+
                 //Estrutura de repetição - Verificar se o valor da largura digitada está correta
                 while (largura > 2)
                 {
@@ -73,9 +74,11 @@ namespace M2_Pro1
                     novaLarg = float.Parse((Console.ReadLine()));
                     largura = novaLarg;//processamento/atribuição da nova largura
                 }
+
                 //Processamento das tolerâncias de gramatura
                 Console.Write("\nTolerância da gramatura (%): ±");
                 toleranciaGrm = float.Parse(Console.ReadLine());//tolerância deve ser de ± 5%
+
                 //Estrutura de repetição - Verificar se a tolerância digitada está correta
                 while (toleranciaGrm > 5)
                 {
@@ -83,11 +86,14 @@ namespace M2_Pro1
                     novaToleranciaGrm = float.Parse((Console.ReadLine()));
                     toleranciaGrm = novaToleranciaGrm;//processamento/atribuição da nova tolerância
                 }
+
                 maxGrm = gramatura * (toleranciaGrm / 100 + 1);//processamento do máximo de gramatura
                 minGrm = gramatura - (gramatura * toleranciaGrm / 100);//processamento do minímo de gramatura
 
+                //Processamento das tolerâncias da largura
                 Console.Write("Tolerância da largura (%): ±");
                 toleranciaLarg = float.Parse(Console.ReadLine());//tolerância deve ser de ± 2%
+
                 //Estrutura de repetição - Verificar se a tolerância digitada está correta
                 while (toleranciaLarg > 2)
                 {
@@ -116,6 +122,7 @@ namespace M2_Pro1
                 {
                     Console.Write(i + ") g/m²: ");
                     leituraGrm = float.Parse(Console.ReadLine());
+
                     //Estrutura de repetição - Verificar se o valor da gramatura digitada está correta
                     while (leituraGrm > 900)
                     {
@@ -152,6 +159,7 @@ namespace M2_Pro1
                 {
                     Console.Write(i + ") largura: ");
                     leituraLarg = float.Parse(Console.ReadLine());//digitar números até 2,0 metros
+
                     //Estrutura de repetição - Verificar se o valor da largura digitada está correta
                     while (leituraLarg > 2)
                     {
