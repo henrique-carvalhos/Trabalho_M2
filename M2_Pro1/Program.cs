@@ -11,10 +11,34 @@ namespace M2_Pro1
     {
         static void Main(string[] args)
         {
-            /* Programa.:
-             * Problema.:
-             * Data.....:05/06/2022.
-             * Autor(es):Abner Cassilhas, Derick, Henrique de Carvalho.
+            /* Programa.: Sistema de gestão da qualidade
+             * Problema.:Desenvolver um algoritmo que seja capaz de receber dados de um artigo (produto/tecido), fazer o processamento dessas informações e apresentar para o usuário se este produto está aprovado ou não, seguindo as seguintes instruções:
+                    •	Dados de cadastro:
+                        o	Artigo: campo para que o usuário digite o nome do produto.
+                        o	Gramatura: deve conter um número até 900.
+                        o	Largura: deve conter um número até 2.
+                        o	Tolerância da gramatura: digitar um valor de no máximo 5%.
+                            	Calcular valor máximo e mínimo do valor da gramatura de acordo com a tolerância digitada (ex.: gramatura +5% e gramatura -5%).
+                        o	Tolerância da largura: digitar um valor de no máximo 2%.
+                            	Calcular valor máximo e mínimo do valor da largura de acordo com a tolerância digitada (ex.: largura +2% e largura -2%).
+                        o	Após o usuário digitar o número, esse número será verificado, caso não esteja dentro da condição, o programa pedirá que o usuário digite um novo número (apenas nos campos: gramatura, largura, tolerância da gramatura e largura).
+                    •	Após a digitação de todos os dados de cadastro, o teste será iniciado e o usuário deverá digitar 5 valores referentes a gramatura, esses valores serão somados e em segunda será calculado a média.
+                        o	A média da gramatura será verificada da seguinte forma:
+                            	Se a média estiver entre os valores mínimo e o máximo de gramatura, ele está aprovado.
+                            	Se média for menor que o valor mínimo de gramatura, ele será reprovado.
+                            	Caso a gramatura fique maior que o máximo, será reprocessado.
+                    •	Em seguida, o teste referente a largura será iniciado e o usuário deverá digitar 3 valores referentes a largura, esses valores serão somados e em segunda será calculado a média.
+                        o	A média da largura será verificada da seguinte forma:
+                            	Se a média estiver entre os valores mínimo e o máximo de largura, ele está aprovado.
+                            	Se média for maior que o valor máximo de largura, ele será reprovado.
+                            	Caso a largura fique menor que o mínimo, será reprocessado.
+                    •	Como resultado final, o programa deverá apresentar as seguintes informações:
+                        o	Artigo.
+                        o	Média da gramatura, se ela está aprovada, reprovada ou será reprocessada, gramatura padrão, resultado da máxima e mínima da gramatura. 
+                        o	Média da largura, se ela está aprovada, reprovada ou será reprocessada, largura padrão, resultado da máxima e mínima da largura. 
+                    •	No fim, o programa deverá perguntar se o usuário deseja realizar um novo teste, se a resposta for sim, o programa será reiniciado, e se a resposta for não o programa será finalizado.
+             * Data.....: 05/06/2022.
+             * Autor(es): Abner Cassilhas, Derick, Henrique de Carvalho.
              */
 
             //Declaração de variáveis
