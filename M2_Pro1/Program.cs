@@ -54,7 +54,7 @@ namespace M2_Pro1
                 Console.WriteLine("-------------------------------------------------------------------------------------");
                 Console.WriteLine(" ***                   SISTEMA DE GESTÃO DA QUALIDADE - TÊXTIL                   *** ");
                 Console.WriteLine("-------------------------------------------------------------------------------------\n");
-                Console.WriteLine("Olá! Seja bem vindo ao SGQ, sistema que gerencia a qualidade de tecidos têxteis.");
+                Console.WriteLine("Olá! Seja bem-vindo ao SGQ, sistema que gerencia a qualidade de tecidos têxteis.");
                 Console.WriteLine("Software capaz de fazer a validação dos testes de largura e gramatura (g/m²)");
                 Console.WriteLine("Serão utilizadas como base as normas: \n");
                 Console.WriteLine("NBR 10591 - Materiais têxteis - Determinação da gramatura de superfícies têxteis");
