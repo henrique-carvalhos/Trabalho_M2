@@ -14,7 +14,7 @@ namespace M2_Pro1
             /* Programa.:
              * Problema.:
              * Data.....:05/06/2022.
-             * Autor(es):Abner, Derick, Henrique.
+             * Autor(es):Abner Cassilhas, Derick, Henrique de Carvalho.
              */
 
             //Declaração de variáveis
